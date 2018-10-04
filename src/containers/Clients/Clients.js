@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import Client from '../../components/Client/Client';
 import Details from '../../components/Details/Details';
 
+import './Clients.css';
+
 export class Clients extends Component {
     render(){
         let panes = this.props.clients.map((client, id) => (
