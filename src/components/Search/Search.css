@@ -1,6 +1,17 @@
 .Search {
-    width: 23.7%;
+    width: 100%;
 }
 .ui.input>input{
     border-radius: unset;
+}
+.stretched.twelve.wide.column{
+    padding-left: 0;
+    padding-right: 0;
+}
+.four.wide.column{
+    padding-left: 0;
+    padding-right: 0;
+}
+.ui.grid>.column:not(.row), .ui.grid>.row>.column{
+    padding-right: 0;
 }

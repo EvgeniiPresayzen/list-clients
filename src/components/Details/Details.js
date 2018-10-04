@@ -14,33 +14,28 @@ const details = (props) => {
     let avatar = props.client.general.avatar;
 
     return(
-            <List verticalAlign='middle'>
-                <Image src={avatar} floated='left'/>
-                <List.Content>
+        <div>
+            <Image src={avatar} floated='left'/>
+            <List  floated='left'>
                 <List.Item>
-                    <List.Content><h1>{name}</h1></List.Content>
+                    <List.Header as='h2'>{name}</List.Header>
+                    <List.Description>
+                        {company}
+                    </List.Description>
                 </List.Item>
-                <List.Item>
-                    <List.Content><h3>{company}</h3></List.Content>
-                </List.Item>
-
-                <List.Item>
-                    <List.Icon name='marker' />
-                    <List.Content>{street}</List.Content>
-                </List.Item></List.Content>
-                <List.Item>
-                    <List.Icon name='mail' />
-                    <List.Content>
-                        <a href={email}>{email}</a>
-                    </List.Content>
-                </List.Item>
-                <List.Item>
-                    <List.Icon name='phone' />
-                    <List.Content>
-                        <List.Content>{phone}</List.Content>
-                    </List.Content>
-                </List.Item>
+                <List.Item
+                    icon='marker'
+                    content={street} />
+                <List.Item
+                    icon='mail'
+                    content={<a href={email}>{email}</a>}
+                />
+                <List.Item
+                    icon='phone'
+                    content={phone}
+                />
             </List>
+        </div>
     );
 };
 

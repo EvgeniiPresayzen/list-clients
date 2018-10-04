@@ -3,7 +3,7 @@ import React from 'react';
 import {Image, List} from 'semantic-ui-react';
 
 const client = (props) => (
-        <List.Item>
+        <List.Item style={{width: '350px'}}>
             <Image size='mini' src={props.avatar}  floated='left'/>
             <List.Content>
                 <List.Header>
