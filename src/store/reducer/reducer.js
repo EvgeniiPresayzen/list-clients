@@ -1,7 +1,8 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    clients: []
+    clients: [],
+    details: []
 };
 
 const reducer = ( state = initialState, action ) => {
@@ -10,9 +11,17 @@ const reducer = ( state = initialState, action ) => {
             return {
                 ...state,
                 clients: action.clients
-            }
+            };
+        case actionTypes.SET_DETAILS:
+            const updatedArray = state.clients.filter((client, index) => index === action.personId);
+            const NewClient = updatedArray[0];
+            return {
+                ...state,
+                details: NewClient
+            };
+        default: return state;
     }
-    return state;
+
 };
 
 export default reducer;

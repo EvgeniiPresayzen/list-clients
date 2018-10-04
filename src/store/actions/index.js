@@ -1,3 +1,5 @@
 export {
-    setClients
+    initClients,
+    setClients,
+    setDetails
 } from './clients';
