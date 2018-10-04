@@ -7,12 +7,6 @@ export const setClients = (clients) => {
         clients: clients
     };
 };
-export const setDetails = (id) => {
-    return {
-        type: actionTypes.SET_DETAILS,
-        personId: id
-    };
-};
 export const initClients = () => {
     return dispatch => dispatch(setClients(data));
 };

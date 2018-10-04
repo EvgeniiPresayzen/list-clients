@@ -13,7 +13,7 @@ export class SearchForm extends Component {
 
     render(){
         return (
-            <div className="five wide column SearchForm">
+            <div className="five wide column SearchForm" style={{paddingRight: 0}}>
                 <Search/>
                 <Clients/>
             </div>
