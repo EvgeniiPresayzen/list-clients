@@ -1,0 +1,6 @@
+.Search {
+    width: 100%;
+}
+.ui.input>input{
+    border-radius: unset;
+}
