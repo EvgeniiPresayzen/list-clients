@@ -2,13 +2,13 @@ import React from 'react';
 
 import {Image, List} from 'semantic-ui-react';
 
-const client = () => (
+const client = (props) => (
         <List.Item>
-            <Image avatar src='' />
+            <Image avatar src={props.avatar} />
             <List.Content>
-                <List.Header as='a'>Name</List.Header>
+                <List.Header as='a'>{props.name}</List.Header>
                 <List.Description>
-                    Job title
+                    {props.title}
                 </List.Description>
             </List.Content>
         </List.Item>

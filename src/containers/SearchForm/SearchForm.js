@@ -10,7 +10,7 @@ import './SearchForm.css';
 
 export class SearchForm extends Component {
     componentDidMount () {
-        console.log(data);
+        console.log(data[0]);
         this.props.onInitClients(data);
     }
 
