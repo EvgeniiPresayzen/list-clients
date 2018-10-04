@@ -3,8 +3,7 @@ import React from 'react';
 import {Image, Grid, List} from 'semantic-ui-react';
 
 const details = () => (
-    <div  className="eleven wide column">
-        <Grid>
+        <Grid className="eleven wide column">
             <Grid.Column width={4}>
                 <Image src='/images/wireframe/image.png' />
             </Grid.Column>
@@ -31,7 +30,6 @@ const details = () => (
                 </List>
             </Grid.Column>
         </Grid>
-    </div>
 );
 
 export default details;
