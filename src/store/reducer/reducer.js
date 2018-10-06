@@ -1,7 +1,8 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    clients: []
+    clients: [],
+    search: ''
 };
 
 const reducer = ( state = initialState, action ) => {
@@ -10,6 +11,11 @@ const reducer = ( state = initialState, action ) => {
             return {
                 ...state,
                 clients: action.clients
+            };
+        case actionTypes.SEARCH:
+            return {
+                ...state,
+                search: action.value
             };
         default: return state;
     }

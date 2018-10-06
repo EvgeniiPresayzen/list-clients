@@ -1,10 +1,24 @@
 import {Input} from "semantic-ui-react";
-import React from "react";
+import React, {Component} from "react";
+import { connect } from 'react-redux';
 
 import './Search.css'
+import * as actions from "../../store/actions";
 
-const search = () => (
-    <Input className='Search' icon='search' placeholder='Search...' />
-);
+export class Search extends Component {
+    render() {
+        return (
+            <Input className='Search' icon='search' placeholder='Search...' onChange={(e) => {
+                this.props.getSearch(e.target.value);
+            }} />
+        )
+    }
+}
 
-export default search;
+const mapDispatchToProps = dispatch => {
+    return {
+        getSearch: (value) => dispatch(actions.getSearch(value)),
+    }
+};
+
+export default connect(null, mapDispatchToProps)(Search);
