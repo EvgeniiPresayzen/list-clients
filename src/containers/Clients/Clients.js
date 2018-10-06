@@ -32,9 +32,14 @@ export class Clients extends Component {
 const mapStateToProps = state => {
     return {
         clients: state.clients.filter(client =>
-            client.general.firstName.toLowerCase().includes(state.search.toLowerCase()))
+            client.general.firstName.toLowerCase().includes(state.search.toLowerCase()) ||
+            client.general.lastName.toLowerCase().includes(state.search.toLowerCase()) ||
+            client.job.title.toLowerCase().includes(state.search.toLowerCase()) ||
+            client.job.company.toLowerCase().includes(state.search.toLowerCase()) ||
+            client.address.city.toLowerCase().includes(state.search.toLowerCase()) ||
+            client.address.country.toLowerCase().includes(state.search.toLowerCase()) ||
+            client.contact.phone.toLowerCase().includes(state.search.toLowerCase())
+        )
     };
 };
 export default connect(mapStateToProps)(Clients);
-{/*client.general.firstName.toLowerCase().includes(state.search) ||
-            client.general.lastName.toLowerCase().includes(state.search))*/}
