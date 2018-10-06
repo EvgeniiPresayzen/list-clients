@@ -6,6 +6,7 @@ import Client from '../../components/Client/Client';
 import Details from '../../components/Details/Details';
 
 import './Clients.css';
+import Search from "../Search/Search";
 
 export class Clients extends Component {
     render(){
@@ -16,15 +17,17 @@ export class Clients extends Component {
                                 <Client
                                     name={client.general.firstName + ' ' + client.general.lastName}
                                     title={client.job.title}
-                                    avatar={client.general.avatar}
-                                />
+                                    avatar={client.general.avatar} />
                             </List>
                         </Menu.Item>
                 ),
                 render: () => <Tab.Pane><Details client={client}/></Tab.Pane>}
         ));
         return (
-            <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes} />
+            <div>
+                <Search/>
+                <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes} />
+            </div>
         );
     }
 }
@@ -39,7 +42,8 @@ const mapStateToProps = state => {
             client.address.city.toLowerCase().includes(state.search.toLowerCase()) ||
             client.address.country.toLowerCase().includes(state.search.toLowerCase()) ||
             client.contact.phone.toLowerCase().includes(state.search.toLowerCase())
-        )
+        ),
+        error: state.error,
     };
 };
 export default connect(mapStateToProps)(Clients);

@@ -7,6 +7,18 @@ export const setClients = (clients) => {
         clients: clients
     };
 };
+
+export const errorClients = (err) => {
+    return {
+        type: actionTypes.SET_ERROR_CLIENTS,
+        errorMessage: err
+    }
+}
 export const initClients = () => {
-    return dispatch => dispatch(setClients(data));
+    try {
+        return dispatch => dispatch(setClients(data));
+    } catch (err) {
+        return dispatch => dispatch(errorClients(err));
+    }
+
 };

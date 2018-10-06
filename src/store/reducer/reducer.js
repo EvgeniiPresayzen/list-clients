@@ -2,7 +2,9 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     clients: [],
-    search: ''
+    search: '',
+    errorMessage: '',
+    error: false
 };
 
 const reducer = ( state = initialState, action ) => {
@@ -11,6 +13,12 @@ const reducer = ( state = initialState, action ) => {
             return {
                 ...state,
                 clients: action.clients
+            };
+        case actionTypes.SET_ERROR_CLIENTS:
+            return {
+                ...state,
+                error: true,
+                errorMessage: action.errorMessage
             };
         case actionTypes.SEARCH:
             return {
