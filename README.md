@@ -1,1 +1,7 @@
-Todo-list
+> Setting up the application:
+1. Copy the project from the repository:
+*** git clone 'https://github.com/EvgeniiPresayzen/list-clients.git' ***
+2. Install node-modules:
+*** npm install ***
+3. Start project:
+*** npm start ***
