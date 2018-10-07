@@ -1,4 +1,5 @@
 import data from '../../assets/Data/clients.json';
+import axios from "../../axios-order";
 import * as actionTypes from './actionTypes';
 
 export const setClients = (clients) => {
@@ -10,15 +11,15 @@ export const setClients = (clients) => {
 
 export const errorClients = (err) => {
     return {
-        type: actionTypes.SET_ERROR_CLIENTS,
-        errorMessage: err
+        type: actionTypes.SET_ERROR_CLIENTS
     }
 }
 export const initClients = () => {
-    try {
-        return dispatch => dispatch(setClients(data));
-    } catch (err) {
-        return dispatch => dispatch(errorClients(err));
-    }
-
+    return dispatch => axios.get('https://list-clients.firebaseio.com/lists.json')
+        .then( response => {
+            dispatch(setClients(response.data));
+        })
+        .catch( error => {
+            dispatch(errorClients());
+        });
 };

@@ -3,7 +3,6 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     clients: [],
     search: '',
-    errorMessage: '',
     error: false
 };
 
@@ -17,8 +16,7 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.SET_ERROR_CLIENTS:
             return {
                 ...state,
-                error: true,
-                errorMessage: action.errorMessage
+                error: true
             };
         case actionTypes.SEARCH:
             return {
